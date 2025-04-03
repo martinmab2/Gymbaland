@@ -1,5 +1,5 @@
 # Trabajo-Practico-1-Programacion-y-Servicios-Web
-# Sitio Web de GYMBALAND💪
+## Sitio Web de GYMBALAND💪
 
 Este proyecto es parte de la práctica de desarrollo de un sitio web utilizando **HTML5** y **CSS3**, dentro de la materia **Programación y Servicios Web**, correspondiente al tercer año de la carrera **Analista Programador Universitario** en la **Universidad Nacional de Jujuy**.
 
