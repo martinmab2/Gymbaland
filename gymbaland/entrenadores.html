@@ -4,89 +4,338 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrenadores | Gymbaland</title>
+    <link rel="icon" type="image/jpg" href="img/gymbaland.jpg">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1c3a594d0c.js" crossorigin="anonymous"></script>
     <!-- Enlace al archivo CSS -->
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    <!-- Encabezado -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="clases.html">Clases</a></li>
-                <li><a href="precios.html">Precios</a></li>
-            </ul>
+        <nav class="main-nav">
+            <div class="logo"> 
+                <a>GYM<i class="fas fa-dumbbell"></i>BALAND</a>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="entrenadores.html">Clases</a></li>
+                <li><a href="#crossfit">Precios</a></li>
+                <li><a href="#pilates">Blog</a></li>
+            </ul>9
         </nav>
     </header>
-
-    <!-- Hero con refrán motivacional -->
-    <section id="hero-entrenadores">
-        <h1>Conoce a nuestros entrenadores</h1>
-        <p>En Gymbaland, cada entrenador te lleva al vibe check perfecto con high tech fitness. #Gymbaland</p>
+    <section class="hero">
+        <video autoplay muted loop>
+            <source src="videos/entrenamiento3.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
+        <div class="overlay">
+            <h1>Conoce a nuestros entrenadores</h1>
+            <p>En Gymbaland, cada entrenador te lleva al vibe check perfecto con high tech fitness. #Gymbaland</p>
+        </div>
     </section>
-
-    <!-- Tarjetas de entrenadores -->
     <section id="tarjetas-entrenadores">
-        <h2>Perfiles Interactivos</h2>
-        <div class="grid-tarjetas">
-            <div class="tarjeta">
-                <div class="tarjeta-frontal">
-                    <img src="img/entrenador1.jpg" alt="Entrenador 1">
-                    <h3>Juan Pérez</h3>
+        <h2 class="Titulo-cards">Perfiles De Entrenadores</h2>
+        <div class="trainer-grid">
+            <div class="trainer-card">
+                <div class="trainer-front">
+                    <img src="img/entrenador1.jpg" alt="Alex Fernández">
+                    <h3>Alex Fernández</h3>
+                    <p>Especialista en CrossFit</p>
                 </div>
-                <div class="tarjeta-trasera">
-                    <p>Especialista en CrossFit y musculación avanzada. ¡Descubre tus límites!</p>
+                <div class="trainer-back">
+                    <h3>Alex Fernández</h3>
+                    <p>Especialista en CrossFit Intensivo con 8 años de experiencia. Instructor certificado Level 2.</p>
+                    <div class="trainer-skills">
+                        <div class="skill-bar">
+                            <label>CrossFit</label>
+                            <div class="bar">
+                                <div class="progress" style="--skill-value: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <label>Fuerza</label>
+                            <div class="bar">
+                                <div class="progress" style="--skill-value: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trainer-rating">
+                        <div class="stars">
+                            <span style="width: 98%">★★★★★</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="tarjeta">
-                <div class="tarjeta-frontal">
-                    <img src="img/entrenador2.jpg" alt="Entrenador 2">
-                    <h3>María López</h3>
+            <!-- Repite la estructura para otros entrenadores -->
+            <div class="trainer-card">
+                <div class="trainer-front">
+                    <img src="img/entrenador1.jpg" alt="Alex Fernández">
+                    <h3>Alex Fernández</h3>
+                    <p>Especialista en CrossFit</p>
                 </div>
-                <div class="tarjeta-trasera">
-                    <p>Experta en yoga y flexibilidad. Vuelve a conectarte contigo mismo.</p>
+                <div class="trainer-back">
+                    <h3>Alex Fernández</h3>
+                    <p>Especialista en CrossFit Intensivo con 8 años de experiencia. Instructor certificado Level 2.</p>
+                    <div class="trainer-skills">
+                        <div class="skill-bar">
+                            <label>CrossFit</label>
+                            <div class="bar">
+                                <div class="progress" style="--skill-value: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <label>Fuerza</label>
+                            <div class="bar">
+                                <div class="progress" style="--skill-value: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trainer-rating">
+                        <div class="stars">
+                            <span style="width: 98%">★★★★★</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- Más tarjetas según el equipo de entrenadores -->
+            <div class="trainer-card">
+                <div class="trainer-front">
+                    <img src="img/entrenador1.jpg" alt="Alex Fernández">
+                    <h3>Alex Fernández</h3>
+                    <p>Especialista en CrossFit</p>
+                </div>
+                <div class="trainer-back">
+                    <h3>Alex Fernández</h3>
+                    <p>Especialista en CrossFit Intensivo con 8 años de experiencia. Instructor certificado Level 2.</p>
+                    <div class="trainer-skills">
+                        <div class="skill-bar">
+                            <label>CrossFit</label>
+                            <div class="bar">
+                                <div class="progress" style="--skill-value: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <label>Fuerza</label>
+                            <div class="bar">
+                                <div class="progress" style="--skill-value: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trainer-rating">
+                        <div class="stars">
+                            <span style="width: 98%">★★★★★</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="trainer-card">
+                <div class="trainer-front">
+                    <img src="img/entrenador1.jpg" alt="Alex Fernández">
+                    <h3>Alex Fernández</h3>
+                    <p>Especialista en CrossFit</p>
+                </div>
+                <div class="trainer-back">
+                    <h3>Alex Fernández</h3>
+                    <p>Especialista en CrossFit Intensivo con 8 años de experiencia. Instructor certificado Level 2.</p>
+                    <div class="trainer-skills">
+                        <div class="skill-bar">
+                            <label>CrossFit</label>
+                            <div class="bar">
+                                <div class="progress" style="--skill-value: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <label>Fuerza</label>
+                            <div class="bar">
+                                <div class="progress" style="--skill-value: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trainer-rating">
+                        <div class="stars">
+                            <span style="width: 98%">★★★★★</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="trainer-card">
+                <div class="trainer-front">
+                    <img src="img/entrenador1.jpg" alt="Alex Fernández">
+                    <h3>Alex Fernández</h3>
+                    <p>Especialista en CrossFit</p>
+                </div>
+                <div class="trainer-back">
+                    <h3>Alex Fernández</h3>
+                    <p>Especialista en CrossFit Intensivo con 8 años de experiencia. Instructor certificado Level 2.</p>
+                    <div class="trainer-skills">
+                        <div class="skill-bar">
+                            <label>CrossFit</label>
+                            <div class="bar">
+                                <div class="progress" style="--skill-value: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <label>Fuerza</label>
+                            <div class="bar">
+                                <div class="progress" style="--skill-value: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trainer-rating">
+                        <div class="stars">
+                            <span style="width: 98%">★★★★★</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="trainer-card">
+                <div class="trainer-front">
+                    <img src="img/entrenador1.jpg" alt="Alex Fernández">
+                    <h3>Alex Fernández</h3>
+                    <p>Especialista en CrossFit</p>
+                </div>
+                <div class="trainer-back">
+                    <h3>Alex Fernández</h3>
+                    <p>Especialista en CrossFit Intensivo con 8 años de experiencia. Instructor certificado Level 2.</p>
+                    <div class="trainer-skills">
+                        <div class="skill-bar">
+                            <label>CrossFit</label>
+                            <div class="bar">
+                                <div class="progress" style="--skill-value: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <label>Fuerza</label>
+                            <div class="bar">
+                                <div class="progress" style="--skill-value: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trainer-rating">
+                        <div class="stars">
+                            <span style="width: 98%">★★★★★</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="trainer-card">
+                <div class="trainer-front">
+                    <img src="img/entrenador1.jpg" alt="Alex Fernández">
+                    <h3>Alex Fernández</h3>
+                    <p>Especialista en CrossFit</p>
+                </div>
+                <div class="trainer-back">
+                    <h3>Alex Fernández</h3>
+                    <p>Especialista en CrossFit Intensivo con 8 años de experiencia. Instructor certificado Level 2.</p>
+                    <div class="trainer-skills">
+                        <div class="skill-bar">
+                            <label>CrossFit</label>
+                            <div class="bar">
+                                <div class="progress" style="--skill-value: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <label>Fuerza</label>
+                            <div class="bar">
+                                <div class="progress" style="--skill-value: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trainer-rating">
+                        <div class="stars">
+                            <span style="width: 98%">★★★★★</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="trainer-card">
+                <div class="trainer-front">
+                    <img src="img/entrenador1.jpg" alt="Alex Fernández">
+                    <h3>Alex Fernández</h3>
+                    <p>Especialista en CrossFit</p>
+                </div>
+                <div class="trainer-back">
+                    <h3>Alex Fernández</h3>
+                    <p>Especialista en CrossFit Intensivo con 8 años de experiencia. Instructor certificado Level 2.</p>
+                    <div class="trainer-skills">
+                        <div class="skill-bar">
+                            <label>CrossFit</label>
+                            <div class="bar">
+                                <div class="progress" style="--skill-value: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <label>Fuerza</label>
+                            <div class="bar">
+                                <div class="progress" style="--skill-value: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trainer-rating">
+                        <div class="stars">
+                            <span style="width: 98%">★★★★★</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="trainer-card">
+                <div class="trainer-front">
+                    <img src="img/entrenador1.jpg" alt="Alex Fernández">
+                    <h3>Alex Fernández</h3>
+                    <p>Especialista en CrossFit</p>
+                </div>
+                <div class="trainer-back">
+                    <h3>Alex Fernández</h3>
+                    <p>Especialista en CrossFit Intensivo con 8 años de experiencia. Instructor certificado Level 2.</p>
+                    <div class="trainer-skills">
+                        <div class="skill-bar">
+                            <label>CrossFit</label>
+                            <div class="bar">
+                                <div class="progress" style="--skill-value: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <label>Fuerza</label>
+                            <div class="bar">
+                                <div class="progress" style="--skill-value: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trainer-rating">
+                        <div class="stars">
+                            <span style="width: 98%">★★★★★</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-
-    <!-- Barra de habilidades -->
-    <section id="habilidades">
-        <h2>Nuestros entrenadores sobresalen en:</h2>
-        <div class="habilidad">
-            <label>Fuerza</label>
-            <div class="barra">
-                <div class="progreso" style="width: 90%;"></div>
-            </div>
-        </div>
-        <div class="habilidad">
-            <label>Flexibilidad</label>
-            <div class="barra">
-                <div class="progreso" style="width: 80%;"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sistema de rating -->
-    <section id="rating">
-        <h2>Evaluación de nuestros entrenadores</h2>
-        <div class="rating">
-            <span>★★★★★</span> <!-- Puedes estilizar esto en CSS -->
-            <p>4.8 sobre 5 basado en 200+ reseñas</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <p>Gymbaland - Vibe Check y High Tech. ¡Descubre la mejor versión de ti! #Gymbaland</p>
-        <div class="redes-sociales">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
+        <div class="clase-titulo">
+            <p>Gymbaland - Vibe Check y High Tech. ¡Descubre la mejor versión de ti! #Gymbaland</p>
         </div>
-        <div>
-            <a href="contacto.html">Formulario de Contacto</a> <!-- Enlace directo al formulario -->
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="redes-sociales">
+                    <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                </div>
+                <div class="contact-btn">
+                    <a href="contacto.html"><i class="fas fa-envelope"></i> Contactanos para mas informacion</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <div class="mapa">
+                    <span class="mapa-title"><i class="fas fa-map-marker-alt"></i> Nuestra Ubicación:</span>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434617582!2d-58.37723248530711!3d-34.60552898045159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccadd1d39f9eb%3A0xa8ae66542b70b473!2sPlaza%20de%20Mayo!5e0!3m2!1ses!2sar!4v1652111528727!5m2!1ses!2sar" 
+                        allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Gymbaland. Todos los derechos reservados | Desarrollado por <a href="#">Martin Alejandro Bonari</a></p>
         </div>
     </footer>
 </body>
