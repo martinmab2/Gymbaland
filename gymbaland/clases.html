@@ -4,118 +4,433 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clases | Gymbaland</title>
-    <!-- Enlace al archivo CSS -->
     <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1c3a594d0c.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Encabezado -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#musculacion">Musculación</a></li>
-                <li><a href="#crossfit">CrossFit</a></li>
-                <li><a href="#yoga">Yoga</a></li>
-                <li><a href="#spinning">Spinning</a></li>
+        <nav class="main-nav">
+            <div class="logo"> 
+                <a>GYM<i class="fas fa-dumbbell"></i>BALAND</a>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="entrenadores.html">Entrenadores</a></li>
+                <li><a href="#crossfit">Precios</a></li>
+                <li><a href="#pilates">Blog</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Sección Hero con refrán -->
-    <section id="hero-clases">
-        <h1>Clases en Gymbaland</h1>
-        <p>#Gymbaland: ¡Donde el vibe check se convierte en high tech! Únete al movimiento.</p>
-    </section>
-
-    <!-- Filtros por categoría -->
-    <section id="filtros">
-        <h2>Filtra por Categorías</h2>
-        <div class="filtro-categorias">
-            <label>
-                <input type="checkbox" name="categoria" value="musculacion">
-                Musculación
-            </label>
-            <label>
-                <input type="checkbox" name="categoria" value="crossfit">
-                CrossFit
-            </label>
-            <label>
-                <input type="checkbox" name="categoria" value="yoga">
-                Yoga
-            </label>
-            <label>
-                <input type="checkbox" name="categoria" value="spinning">
-                Spinning
-            </label>
+    <section class="hero">
+        <video autoplay muted loop>
+            <source src="videos/entrenamiento3.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
+        <div class="overlay">
+            <h1>Clases en Gymbaland</h1>
+            <p>#Gymbaland: ¡Donde el vibe check se convierte en high tech! Únete al movimiento.</p>
+            <p>Aqui encontraras todas nuestras clases y horarios!</p>
         </div>
     </section>
 
     <!-- Galería tipo "masonry" -->
     <section id="galeria">
-        <h2>Clases Destacadas</h2>
+        <h2 class="Titulo-cards">Clases Destacadas</h2>
+        <h3 class="Titulo-cards3">Filtra por Categorías</h3>
+        <input type="checkbox" id="zumba" name="categoria" value="zumba" checked>
+        <input type="checkbox" id="crossfit" name="categoria" value="crossfit" checked>
+        <input type="checkbox" id="funcional" name="categoria" value="funcional" checked>
+        <input type="checkbox" id="spinning" name="categoria" value="spinning" checked>
+        <input type="checkbox" id="personal" name="categoria" value="personal" checked>
+        <input type="checkbox" id="pilates" name="categoria" value="pilates" checked>
+        
+        <div class="filtro-categorias">
+            <div>
+                <label for="zumba"><span>Zumba</span></label>
+                <label for="crossfit"><span>CrossFit</span></label>
+                <label for="funcional"><span>Entrenamiento Funcional</span></label>
+                <label for="spinning"><span>Spinning</span></label>
+                <label for="personal"><span>Entrenamiento Personalizado</span></label>
+                <label for="pilates"><span>Pilates</span></label>
+            </div>
+        </div>
+
         <div class="grid-masonry">
-            <div class="clase">
-                <img src="img/musculacion.jpg" alt="Musculación">
-                <p>Musculación de Alto Impacto</p>
+            <!-- Zumba -->
+            <div class="clase" data-categoria="zumba">
+                <div class="clase-logo">
+                    <i class="fas fa-music"></i>
+                </div>
+                <img src="img/zumba1.jpg" alt="Zumba Mañana">
+                <div class="clase-info">
+                    <h3 class="clase-titulo">Zumba Energy</h3>
+                    <p class="clase-horario">Lunes y Miércoles 9:00 - 10:00</p>
+                    <p class="clase-trainer">Trainer: María Pérez</p>
+                    <a href="#" class="clase-btn">Ver más</a>
+                </div>
             </div>
-            <div class="clase">
-                <img src="img/crossfit.jpg" alt="CrossFit">
-                <p>CrossFit para Campeones</p>
+            <div class="clase" data-categoria="zumba">
+                <div class="clase-logo">
+                    <i class="fas fa-music"></i>
+                </div>
+                <img src="img/zumba2.jpg" alt="Zumba Tarde">
+                <div class="clase-info">
+                    <h3 class="clase-titulo">Zumba Power</h3>
+                    <p class="clase-horario">Martes y Jueves 18:00 - 19:00</p>
+                    <p class="clase-trainer">Trainer: Laura González</p>
+                    <a href="#" class="clase-btn">Ver más</a>
+                </div>
             </div>
-            <div class="clase">
-                <img src="img/yoga.jpg" alt="Yoga">
-                <p>Yoga para la Paz Interior</p>
+
+            <!-- Funcional -->
+            <div class="clase" data-categoria="funcional">
+                <div class="clase-logo">
+                    <i class="fas fa-dumbbell"></i>
+                </div>
+                <img src="img/funcional1.jpg" alt="Funcional Mañana">
+                <div class="clase-info">
+                    <h3 class="clase-titulo">Funcional Intensivo</h3>
+                    <p class="clase-horario">Lunes a Viernes 7:00 - 8:00</p>
+                    <p class="clase-trainer">Trainer: Carlos Ruiz</p>
+                    <a href="#" class="clase-btn">Ver más</a>
+                </div>
             </div>
-            <div class="clase">
-                <img src="img/spinning.jpg" alt="Spinning">
-                <p>Spinning al Ritmo del Éxito</p>
+            <div class="clase" data-categoria="funcional">
+                <div class="clase-logo">
+                    <i class="fas fa-dumbbell"></i>
+                </div>
+                <img src="img/funcional2.jpg" alt="Funcional Tarde">
+                <div class="clase-info">
+                    <h3 class="clase-titulo">Funcional Elite</h3>
+                    <p class="clase-horario">Lunes a Viernes 17:00 - 18:00</p>
+                    <p class="clase-trainer">Trainer: Juan Martínez</p>
+                    <a href="#" class="clase-btn">Ver más</a>
+                </div>
+            </div>
+
+            <!-- Personalizado -->
+            <div class="clase" data-categoria="personal">
+                <div class="clase-logo">
+                    <i class="fas fa-user-friends"></i>
+                </div>
+                <img src="img/personalizado1.jpg" alt="Entrenamiento Personalizado">
+                <div class="clase-info">
+                    <h3 class="clase-titulo">Personal Training Pro</h3>
+                    <p class="clase-horario">Horarios flexibles</p>
+                    <p class="clase-trainer">Trainer: Diego Silva</p>
+                    <a href="#" class="clase-btn">Ver más</a>
+                </div>
+            </div>
+
+            <!-- CrossFit -->
+            <div class="clase" data-categoria="crossfit">
+                <div class="clase-logo">
+                    <i class="fas fa-running"></i>
+                </div>
+                <img src="img/crossfit1.jpg" alt="CrossFit Mañana">
+                <div class="clase-info">
+                    <h3 class="clase-titulo">CrossFit Intensivo Mañana</h3>
+                    <p class="clase-horario">Lunes a Viernes 7:00 - 8:30</p>
+                    <p class="clase-trainer">Trainer: Alex Fernández</p>
+                    <a href="#" class="clase-btn">Ver más</a>
+                </div>
+            </div>
+            <div class="clase" data-categoria="crossfit">
+                <div class="clase-logo">
+                    <i class="fas fa-running"></i>
+                </div>
+                <img src="img/crossfit2.jpg" alt="CrossFit Tarde">
+                <div class="clase-info">
+                    <h3 class="clase-titulo">CrossFit Intermedio</h3>
+                    <p class="clase-horario">Lunes a Viernes 14:00 - 15:30</p>
+                    <p class="clase-trainer">Trainer: Pedro Sánchez</p>
+                    <a href="#" class="clase-btn">Ver más</a>
+                </div>
+            </div>
+            <div class="clase" data-categoria="crossfit">
+                <div class="clase-logo">
+                    <i class="fas fa-running"></i>
+                </div>
+                <img src="img/crossfit3.jpg" alt="CrossFit Noche">
+                <div class="clase-info">
+                    <h3 class="clase-titulo">CrossFit Elite</h3>
+                    <p class="clase-horario">Lunes a Viernes 19:00 - 20:30</p>
+                    <p class="clase-trainer">Trainer: Martín López</p>
+                    <a href="#" class="clase-btn">Ver más</a>
+                </div>
+            </div>
+
+            <!-- Spinning -->
+            <div class="clase" data-categoria="spinning">
+                <div class="clase-logo">
+                    <i class="fas fa-bicycle"></i>
+                </div>
+                <img src="img/spinning1.jpg" alt="Spinning Mañana">
+                <div class="clase-info">
+                    <h3 class="clase-titulo">Spinning Express</h3>
+                    <p class="clase-horario">Martes y Jueves 8:00 - 9:00</p>
+                    <p class="clase-trainer">Trainer: Ana Gómez</p>
+                    <a href="#" class="clase-btn">Ver más</a>
+                </div>
+            </div>
+            <div class="clase" data-categoria="spinning">
+                <div class="clase-logo">
+                    <i class="fas fa-bicycle"></i>
+                </div>
+                <img src="img/spinning2.jpg" alt="Spinning Tarde">
+                <div class="clase-info">
+                    <h3 class="clase-titulo">Spinning Power</h3>
+                    <p class="clase-horario">Lunes y Miércoles 16:00 - 17:00</p>
+                    <p class="clase-trainer">Trainer: Roberto Díaz</p>
+                    <a href="#" class="clase-btn">Ver más</a>
+                </div>
+            </div>
+            <div class="clase" data-categoria="spinning">
+                <div class="clase-logo">
+                    <i class="fas fa-bicycle"></i>
+                </div>
+                <img src="img/spinning3.jpg" alt="Spinning Noche">
+                <div class="clase-info">
+                    <h3 class="clase-titulo">Spinning Extremo</h3>
+                    <p class="clase-horario">Viernes 20:00 - 21:30</p>
+                    <p class="clase-trainer">Trainer: Lucía Morales</p>
+                    <a href="#" class="clase-btn">Ver más</a>
+                </div>
+            </div>
+
+            <!-- Pilates -->
+            <div class="clase" data-categoria="pilates">
+                <div class="clase-logo">
+                    <i class="fas fa-balance-scale"></i>
+                </div>
+                <img src="img/pilates1.jpg" alt="Pilates Mañana">
+                <div class="clase-info">
+                    <h3 class="clase-titulo">Pilates Básico</h3>
+                    <p class="clase-horario">Lunes y Miércoles 9:00 - 10:00</p>
+                    <p class="clase-trainer">Trainer: Carmen Torres</p>
+                    <a href="#" class="clase-btn">Ver más</a>
+                </div>
+            </div>
+            <div class="clase" data-categoria="pilates">
+                <div class="clase-logo">
+                    <i class="fas fa-balance-scale"></i>
+                </div>
+                <img src="img/pilates2.jpg" alt="Pilates Tarde">
+                <div class="clase-info">
+                    <h3 class="clase-titulo">Pilates Intermedio</h3>
+                    <p class="clase-horario">Martes y Jueves 15:00 - 16:00</p>
+                    <p class="clase-trainer">Trainer: Sandra Paz</p>
+                    <a href="#" class="clase-btn">Ver más</a>
+                </div>
+            </div>
+            <div class="clase" data-categoria="pilates">
+                <div class="clase-logo">
+                    <i class="fas fa-balance-scale"></i>
+                </div>
+                <img src="img/pilates3.jpg" alt="Pilates Avanzado">
+                <div class="clase-info">
+                    <h3 class="clase-titulo">Pilates Avanzado</h3>
+                    <p class="clase-horario">Viernes 18:00 - 19:30</p>
+                    <p class="clase-trainer">Trainer: Isabel Ruiz</p>
+                    <a href="#" class="clase-btn">Ver más</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Tabla de horarios -->
-    <section id="horarios">
-        <h2>Horarios Semanales</h2>
+    <section class="horarios">
+        <h2 class="Titulo-cards">Horarios Semanales</h2>
         <table>
             <thead>
                 <tr>
                     <th>Día</th>
-                    <th>Musculación</th>
-                    <th>CrossFit</th>
-                    <th>Yoga</th>
-                    <th>Spinning</th>
+                    <th>Mañana</th>
+                    <th>Mediodía</th>
+                    <th>Tarde</th>
+                    <th>Noche</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Lunes</td>
-                    <td>9:00 AM</td>
-                    <td>10:00 AM</td>
-                    <td>11:00 AM</td>
-                    <td>12:00 PM</td>
+                    <td><strong>Lunes</strong></td>
+                    <td>
+                        <div class="class-type">Funcional Intensivo</div>
+                        <div class="trainer-name">Carlos Ruiz</div>
+                        <div>7:00 - 8:00</div>
+                    </td>
+                    <td>
+                        <div class="class-type">Zumba Energy</div>
+                        <div class="trainer-name">María Pérez</div>
+                        <div>12:00 - 13:00</div>
+                    </td>
+                    <td>
+                        <div class="class-type">CrossFit Intermedio</div>
+                        <div class="trainer-name">Pedro Sánchez</div>
+                        <div>14:00 - 15:30</div>
+                    </td>
+                    <td>
+                        <div class="class-type">CrossFit Elite</div>
+                        <div class="trainer-name">Martín López</div>
+                        <div>19:00 - 20:30</div>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Martes</td>
-                    <td>2:00 PM</td>
-                    <td>3:00 PM</td>
-                    <td>4:00 PM</td>
-                    <td>5:00 PM</td>
+                    <td><strong>Martes</strong></td>
+                    <td>
+                        <div class="class-type">Spinning Express</div>
+                        <div class="trainer-name">Ana Gómez</div>
+                        <div>8:00 - 9:00</div>
+                    </td>
+                    <td>
+                        <div class="class-type">Pilates Básico</div>
+                        <div class="trainer-name">Carmen Torres</div>
+                        <div>12:00 - 13:00</div>
+                    </td>
+                    <td>
+                        <div class="class-type">Pilates Intermedio</div>
+                        <div class="trainer-name">Sandra Paz</div>
+                        <div>15:00 - 16:00</div>
+                    </td>
+                    <td>
+                        <div class="class-type">Zumba Power</div>
+                        <div class="trainer-name">Laura González</div>
+                        <div>18:00 - 19:00</div>
+                    </td>
                 </tr>
-                <!-- Más horarios según necesidades -->
+                <tr>
+                    <td><strong>Miércoles</strong></td>
+                    <td>
+                        <div class="class-type">Spinning Power</div>
+                        <div class="trainer-name">Roberto Díaz</div>
+                        <div>8:00 - 9:00</div>
+                    </td>
+                    <td>
+                        <div class="class-type">Pilates Básico</div>
+                        <div class="trainer-name">Carmen Torres</div>
+                        <div>12:00 - 13:00</div>
+                    </td>
+                    <td>
+                        <div class="class-type">Funcional Elite</div>
+                        <div class="trainer-name">Juan Martínez</div>
+                        <div>17:00 - 18:00</div>
+                    </td>
+                    <td>
+                        <div class="class-type">CrossFit Elite</div>
+                        <div class="trainer-name">Martín López</div>
+                        <div>19:00 - 20:30</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Jueves</strong></td>
+                    <td>
+                        <div class="class-type">Spinning Express</div>
+                        <div class="trainer-name">Ana Gómez</div>
+                        <div>8:00 - 9:00</div>
+                    </td>
+                    <td>
+                        <div class="class-type">Zumba Energy</div>
+                        <div class="trainer-name">María Pérez</div>
+                        <div>12:00 - 13:00</div>
+                    </td>
+                    <td>
+                        <div class="class-type">Pilates Intermedio</div>
+                        <div class="trainer-name">Sandra Paz</div>
+                        <div>15:00 - 16:00</div>
+                    </td>
+                    <td>
+                        <div class="class-type">Zumba Power</div>
+                        <div class="trainer-name">Laura González</div>
+                        <div>18:00 - 19:00</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Viernes</strong></td>
+                    <td>
+                        <div class="class-type">Funcional Intensivo</div>
+                        <div class="trainer-name">Carlos Ruiz</div>
+                        <div>7:00 - 8:00</div>
+                    </td>
+                    <td>
+                        <div class="class-type">CrossFit Intermedio</div>
+                        <div class="trainer-name">Pedro Sánchez</div>
+                        <div>12:00 - 13:30</div>
+                    </td>
+                    <td>
+                        <div class="class-type">Pilates Avanzado</div>
+                        <div class="trainer-name">Isabel Ruiz</div>
+                        <div>18:00 - 19:30</div>
+                    </td>
+                    <td>
+                        <div class="class-type">Spinning Extremo</div>
+                        <div class="trainer-name">Lucía Morales</div>
+                        <div>20:00 - 21:30</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Sábado</strong></td>
+                    <td>
+                        <div class="class-type">Full Body Mix</div>
+                        <div class="trainer-name">Equipo Completo</div>
+                        <div>10:00 - 11:30</div>
+                    </td>
+                    <td colspan="3">
+                        <div class="nutrition-tip">
+                            <i class="fas fa-apple-alt"></i>
+                            <div class="tip-text">Recuerda mantener una dieta balanceada</div>
+                            <div class="meal-icons">
+                                <i class="fas fa-egg"></i>
+                                <i class="fas fa-fish"></i>
+                                <i class="fas fa-carrot"></i>
+                                <i class="fas fa-bread-slice"></i>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="rest-day">
+                    <td><strong>Domingo</strong></td>
+                    <td colspan="4">
+                        <div class="rest-day-content">
+                            <i class="fas fa-bed"></i>
+                            <div class="rest-text">Día de Descanso</div>
+                            <div class="rest-tip">¡Recuerda que el descanso es parte del entrenamiento!</div>
+                        </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>Gymbaland - ¡Sube tu nivel! #HighTechVibes</p>
-        <div class="redes-sociales">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
+        <div class="clase-titulo"> 
+            <p>Gymbaland - ¡Sube tu nivel! #HighTechVibes</p>    
         </div>
-        <div>
-            <a href="contacto.html">Formulario de Contacto</a> <!-- Enlace directo al formulario -->
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="redes-sociales">
+                    <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                </div>
+                <div class="contact-btn">
+                    <a href="contacto.html"><i class="fas fa-envelope"></i> Contactanos para mas informacion</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <div class="mapa">
+                    <span class="mapa-title"><i class="fas fa-map-marker-alt"></i> Nuestra Ubicación:</span>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434617582!2d-58.37723248530711!3d-34.60552898045159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccadd1d39f9eb%3A0xa8ae66542b70b473!2sPlaza%20de%20Mayo!5e0!3m2!1ses!2sar!4v1652111528727!5m2!1ses!2sar" 
+                        allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Gymbaland. Todos los derechos reservados | Desarrollado por <a href="#">Martin Alejandro Bonari</a></p>
         </div>
     </footer>
 </body>

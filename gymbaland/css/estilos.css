@@ -29,7 +29,7 @@ body {
 section {
     scroll-snap-align: start;
     height: auto;
-    padding: 40px 0;
+    padding: 5px 0;
     margin: 20px 0;
 }
 
@@ -329,7 +329,7 @@ nav input[type="checkbox"]:checked ~ .menu {
 /* Hero Section */
 .hero {
     position: relative;
-    height: calc(100vh - 40px);
+    height: calc(120vh - 40px);
     width: 100%;
     overflow: hidden;
     margin-top: 60px;
@@ -395,6 +395,83 @@ nav input[type="checkbox"]:checked ~ .menu {
     transform: translateY(-50px);
 }
 
+.hero .overlay p {
+    font-size: 1.7rem;
+    color: var(--secondary-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
+                 0 0 10px var(--hover-color),
+                 0 0 20px var(--hover-color);
+    animation: glowText 3s ease-in-out infinite,
+              floatText 4s ease-in-out infinite;
+    position: relative;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+}
+
+.hero .overlay p::before,
+.hero .overlay p::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--secondary-color);
+    animation: borderGlow 2s ease-in-out infinite alternate;
+}
+
+.hero .overlay p::before {
+    left: 0;
+    animation-delay: 0s;
+}
+
+.hero .overlay p::after {
+    right: 0;
+    animation-delay: 1s;
+}
+
+@keyframes glowText {
+    0%, 100% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
+                     0 0 10px var(--hover-color),
+                     0 0 20px var(--hover-color);
+    }
+    50% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
+                     0 0 20px var(--hover-color),
+                     0 0 40px var(--hover-color);
+    }
+}
+
+@keyframes floatText {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes borderGlow {
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+    100% {
+        height: 100%;
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero .overlay p {
+        font-size: 1.3rem;
+        padding: 8px 15px;
+    }
+}
+
 @keyframes fadeUpIn {
     from {
         opacity: 0;
@@ -425,6 +502,153 @@ nav input[type="checkbox"]:checked ~ .menu {
     .hero .cta-btn {
         padding: 12px 24px;
         font-size: 1rem;
+    }
+}
+
+/* Estilos para el filtro de categorías */
+.filtro-categorias {
+    background: rgba(26, 26, 26, 0.05);
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.filtro-categorias div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.filtro-categorias label {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #1a1a1a;
+}
+
+.filtro-categorias label:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filtro-categorias input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #1a1a1a;
+    border-radius: 50%;
+    margin-right: 8px;
+    position: relative;
+    cursor: pointer;
+}
+
+.filtro-categorias input[type="checkbox"]:checked {
+    background-color: #ff4d4d;
+    border-color: #ff4d4d;
+}
+
+.filtro-categorias input[type="checkbox"]:checked::after {
+    content: '✓';
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+}
+
+/* Ocultar checkboxes pero mantenerlos funcionales */
+#galeria > input[type="checkbox"] {
+    display: none;
+}
+
+/* Mostrar todas las clases cuando sus categorías están seleccionadas */
+#zumba:checked ~ .grid-masonry .clase[data-categoria="zumba"],
+#crossfit:checked ~ .grid-masonry .clase[data-categoria="crossfit"],
+#funcional:checked ~ .grid-masonry .clase[data-categoria="funcional"],
+#spinning:checked ~ .grid-masonry .clase[data-categoria="spinning"],
+#personal:checked ~ .grid-masonry .clase[data-categoria="personal"],
+#pilates:checked ~ .grid-masonry .clase[data-categoria="pilates"] {
+    display: block;
+}
+
+/* Ocultar todas las clases por defecto */
+.grid-masonry .clase {
+    display: none;
+}
+
+/* Estilos para las etiquetas de filtro */
+.filtro-categorias label {
+    cursor: pointer;
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 20px;
+    background: #fff;
+    border: 2px solid #1a1a1a;
+    transition: all 0.3s ease;
+}
+
+/* Estado activo de los filtros */
+#zumba:checked ~ .filtro-categorias label[for="zumba"],
+#crossfit:checked ~ .filtro-categorias label[for="crossfit"],
+#funcional:checked ~ .filtro-categorias label[for="funcional"],
+#spinning:checked ~ .filtro-categorias label[for="spinning"],
+#personal:checked ~ .filtro-categorias label[for="personal"],
+#pilates:checked ~ .filtro-categorias label[for="pilates"] {
+    background: #ff4d4d;
+    color: white;
+    border-color: #ff4d4d;
+}
+
+/* Animación para las cards filtradas */
+.grid-masonry .clase {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.grid-masonry .clase:not([style*="display: none"]) {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estado activo del filtro */
+.filtro-categorias input[type="checkbox"]:checked + span {
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+/* Animación para las cards filtradas */
+.grid-masonry .clase {
+    transition: all 0.3s ease;
+}
+
+/* Media query para responsive */
+@media (max-width: 768px) {
+    .filtro-categorias div {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filtro-categorias label {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
     }
 }
 
@@ -476,6 +700,47 @@ nav input[type="checkbox"]:checked ~ .menu {
     margin-bottom: 1px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+/* Variaciones de altura para efecto masonry */
+.clase:nth-child(6n+1) img {
+    height: 380px;
+}
+
+.clase:nth-child(6n+2) img {
+    height: 280px;
+}
+
+.clase:nth-child(6n+3) img {
+    height: 320px;
+}
+
+.clase:nth-child(6n+4) img {
+    height: 260px;
+}
+
+.clase:nth-child(6n+5) img {
+    height: 340px;
+}
+
+.clase:nth-child(6n+6) img {
+    height: 300px;
+}
+
+@media (max-width: 1200px) {
+    .clase:nth-child(odd) img {
+        height: 300px;
+    }
+    
+    .clase:nth-child(even) img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .clase img {
+        height: 250px !important;
+    }
 }
 
 .tarjeta::before {
@@ -557,6 +822,30 @@ nav input[type="checkbox"]:checked ~ .menu {
     animation: expandWidth 0.5s ease-out forwards;
 }
 
+.Titulo-cards3 {
+    text-align: center;
+    font-size: 1.75rem;
+    margin: 40px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.Titulo-cards3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--secondary-color);
+    border-radius: 2px;
+    animation: expandWidth2 0.5s ease-out forwards;
+}
+
 @keyframes expandWidth {
     from {
         width: 0;
@@ -566,10 +855,260 @@ nav input[type="checkbox"]:checked ~ .menu {
     }
 }
 
-/* Testimonials Section */
-.testimonios {
-    padding: 40px 0;
-    margin: 30px 0;
+@keyframes expandWidth2 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 60px;
+    }
+}
+
+/* Estilos para la galería masonry */
+.grid-masonry {
+    columns: 3;
+    column-gap: 20px;
+    padding: 20px;
+}
+
+.clase {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.clase:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.clase img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.clase-info {
+    padding: 20px;
+}
+
+.clase-titulo {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.clase-horario {
+    color: var(--footer-text);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.clase-btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.clase-btn:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+/* Estilos adicionales para las clases */
+.clase-logo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--footer-hover);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.clase-logo i {
+    color: var(--background-color);
+    font-size: 1.2rem;
+}
+
+.clase-trainer {
+    color: var(--footer-hover);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 1200px) {
+    .grid-masonry {
+        columns: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-masonry {
+        columns: 1;
+    }
+}
+
+/* Estilos para la tabla de horarios */
+.horarios {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.horarios table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.horarios thead {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.horarios th {
+    padding: 20px 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.horarios td {
+    padding: 15px;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+}
+
+.horarios tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.horarios tbody tr:hover {
+    background-color: rgba(177, 178, 255, 0.1);
+}
+
+.horarios .trainer-name {
+    color: var(--footer-hover);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.horarios .class-type {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Estilos adicionales para la tabla de horarios */
+.nutrition-tip {
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(244, 162, 97, 0.1);
+    border-radius: 8px;
+}
+
+.nutrition-tip i {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.tip-text {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.meal-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.meal-icons i {
+    font-size: 1.2rem;
+    color: var(--footer-hover);
+    transition: transform 0.3s ease;
+}
+
+.meal-icons i:hover {
+    transform: scale(1.2);
+}
+
+.rest-day {
+    background-color: rgba(177, 178, 255, 0.1);
+}
+
+.rest-day-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.rest-day-content i {
+    font-size: 2rem;
+    color: var(--footer-hover);
+    margin-bottom: 10px;
+}
+
+.rest-text {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.rest-tip {
+    color: var(--footer-text);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .meal-icons {
+        flex-wrap: wrap;
+    }
+    
+    .nutrition-tip, .rest-day-content {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .horarios {
+        padding: 20px 10px;
+        overflow-x: auto;
+    }
+
+    .horarios table {
+        min-width: 600px;
+    }
+
+    .horarios th, 
+    .horarios td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
 }
 
 /* Testimonials Section - Simplificado */
@@ -850,10 +1389,14 @@ nav input[type="checkbox"]:checked ~ .menu {
 
 @keyframes count-to-500 {
     0% { content: "0"; }
+    10% { content: "50"; }
     20% { content: "100"; }
-    40% { content: "200"; }
-    60% { content: "300"; }
-    80% { content: "400"; }
+    30% { content: "150"; }
+    40% { content: "215"; }
+    50% { content: "307"; }
+    70% { content: "382"; }
+    80% { content: "435"; }
+    90% { content: "493"; }
     100% { content: "500"; }
 }
 
@@ -919,10 +1462,6 @@ footer {
     text-align: center;
     font-size: 1rem;
     line-height: 1.5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
 }
 
 .footer-container {
