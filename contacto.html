@@ -4,68 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto | Gymbaland</title>
-    <!-- Enlace al archivo CSS -->
+    <link rel="icon" type="image/png" href="img/gymbaland.jpg" sizes="16x16">
     <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1c3a594d0c.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Encabezado -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="clases.html">Clases</a></li>
+        <!-- Added a class to the nav element for better targeting -->
+        <nav class="main-nav">
+            <div class="logo">
+                <a>GYM<i class="fas fa-dumbbell"></i>BALAND</a>       
+            </div>
+            <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
+            <input type="checkbox" id="menu-toggle">
+            <!-- Ensure submenu is properly nested and visible -->
+            <ul class="menu">
+                <li><a href="index.html">INICIO</a></li>
                 <li><a href="entrenadores.html">Entrenadores</a></li>
                 <li><a href="precios.html">Precios</a></li>
+                <li><a href="clases.html">Contacto</a></li>  
             </ul>
         </nav>
     </header>
-
-    <!-- Sección Hero con refrán -->
-    <section id="hero-contacto">
-        <h1>Contáctanos</h1>
-        <p>Gymbaland te conecta con el éxito: cada mensaje es un paso más cerca de tus metas. #Gymbaland</p>
-    </section>
-
     <!-- Formulario de contacto -->
-    <section id="formulario">
+    <section class="formulario">
         <h2>Formulario de Contacto</h2>
-        <form>
+        <form action="#modal" class="contact-form">
             <div class="form-grid">
                 <div class="form-group">
                     <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required>
+                    <input type="text" id="nombre" name="nombre" pattern="[A-Za-z ]{3,}" required>
+                    <span class="validation-message">El nombre debe tener al menos 3 letras</span>
                 </div>
                 <div class="form-group">
                     <label for="email">Correo Electrónico:</label>
                     <input type="email" id="email" name="email" required>
+                    <span class="validation-message">Ingrese un email válido</span>
                 </div>
                 <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" required>
+                    <span class="validation-message">Ingrese un número de 10 dígitos</span>
+                </div>
+                <div class="form-group full-width">
                     <label for="mensaje">Mensaje:</label>
-                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                    <textarea id="mensaje" name="mensaje" rows="4" minlength="10" required></textarea>
+                    <span class="validation-message">El mensaje debe tener al menos 10 caracteres</span>
                 </div>
             </div>
-            <button type="submit">Enviar</button>
+            <div class="submit-container">
+                <button type="submit">
+                    <span class="button-text">Enviar</span>
+                    <div class="spinner"></div>
+                </button>
+            </div>
         </form>
     </section>
 
-    <!-- Modal de confirmación (manejado con CSS) -->
-    <section id="modal-confirmacion">
+    <section class="modal-confirmacion" id="modal">
         <div class="modal-content">
+            <div class="success-icon"></div>
             <h2>¡Gracias por contactarnos!</h2>
-            <p>Gymbaland se pondrá en contacto contigo pronto. ¡Estamos listos para llevarte al éxito!</p>
+            <p>Gymbaland se pondrá en contacto contigo pronto. ¡Gymbaland los hara estrellas!</p>
+            <a href="#" class="close-modal">Cerrar</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>Gymbaland - ¡El lugar donde cada mensaje te conecta con el éxito! #GymbalandÉxito</p>
-        <div class="redes-sociales">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
+        <div class="clase-titulo">
+            <p>Gymbaland - Vibe Check y High Tech. Se recomienda consumir solamente Pollo!!!</p>
         </div>
-        <div>
-            <a href="contacto.html">Formulario de Contacto</a> <!-- Enlace directo al formulario -->
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="redes-sociales">
+                    <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                </div>
+            </div>
+            <div class="mapa">
+                <span class="mapa-title"><i class="fas fa-map-marker-alt"></i> Nuestra Ubicación:</span>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434617582!2d-58.37723248530711!3d-34.60552898045159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccadd1d39f9eb%3A0xa8ae66542b70b473!2sPlaza%20de%20Mayo!5e0!3m2!1ses!2sar!4v1652111528727!5m2!1ses!2sar" 
+                    allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Gymbaland. Todos los derechos reservados | Desarrollado por <a href="#">Martin Alejandro Bonari</a></p>
         </div>
     </footer>
 </body>
