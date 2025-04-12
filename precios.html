@@ -4,79 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Precios | Gymbaland</title>
-    <!-- Enlace al archivo CSS -->
+    <link rel="icon" type="image/png" href="img/gymbaland.jpg" sizes="16x16">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
+    <script src="https://kit.fontawesome.com/1c3a594d0c.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Encabezado -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="clases.html">Clases</a></li>
+        <nav class="main-nav">
+            <div class="logo">
+                <a>GYM<i class="fas fa-dumbbell"></i>BALAND</a>       
+            </div>
+            <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
+            <input type="checkbox" id="menu-toggle">
+            <ul class="menu">
+                <li><a href="index.html">INICIO</a></li>
                 <li><a href="entrenadores.html">Entrenadores</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="precios.html">Precios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>  
             </ul>
         </nav>
     </header>
 
-    <!-- Hero con refrán motivacional -->
-    <section id="hero-precios">
-        <h1>Precios y Planes</h1>
-        <p>En Gymbaland, nuestros precios son tu puente al éxito. ¡Elige tu camino! #GymbalandÉxito</p>
-    </section>
-
-    <!-- Tabla de precios -->
-    <section id="tabla-precios">
-        <h2>Comparador de Planes</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Plan</th>
-                    <th>Mensual</th>
-                    <th>Anual</th>
-                    <th>Detalles</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Plan Básico</td>
-                    <td>$20</td>
-                    <td>$200</td>
-                    <td><span class="tooltip" data-tooltip="Incluye acceso ilimitado al gimnasio.">Más info</span></td>
-                </tr>
-                <tr>
-                    <td>Plan Premium</td>
-                    <td>$40</td>
-                    <td>$400</td>
-                    <td><span class="tooltip" data-tooltip="Incluye clases y entrenadores personalizados.">Más info</span></td>
-                </tr>
-                <tr>
-                    <td>Plan VIP</td>
-                    <td>$60</td>
-                    <td>$600</td>
-                    <td><span class="tooltip" data-tooltip="Acceso total a instalaciones y servicios exclusivos.">Más info</span></td>
-                </tr>
-            </tbody>
-        </table>
+    <!-- Hero Section -->
+    <section class="precio-hero">
+        <div class="hero-content">
+            <h1>Planes y Precios</h1>
+            <p>Encuentra el plan perfecto para alcanzar tus objetivos</p>
+        </div>
+        <div class="shape-divider"></div>
     </section>
 
     <!-- Toggle de precios -->
     <section id="toggle-precios">
-        <h2>¿Mensual o Anual?</h2>
-        <div class="toggle">
-            <input type="checkbox" id="toggle-plan" name="toggle-plan">
-            <label for="toggle-plan">Mostrar precios anuales</label>
+        <h2>Elige tu Plan</h2>
+        <div class="toggle-container">
+            <span>Mensual</span>
+            <input type="checkbox" id="toggle-plan" class="price-toggle">
+            <label for="toggle-plan" class="toggle-label">
+                <span class="toggle-inner"></span>
+                <span class="toggle-switch"></span>
+            </label>
+            <span>Anual</span>
+        </div>
+    </section>
+
+    <!-- Tabla de precios -->
+    <section id="tabla-precios">
+        <div class="planes-grid">
+            <div class="plan-card" data-plan="basico">
+                <div class="plan-header">
+                    <div class="plan-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Plan Básico</h3>
+                    <div class="precio-container">
+                        <div class="precio">
+                            <span class="precio-mensual visible">$5000/mes</span>
+                            <span class="precio-anual">$50000/año</span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> Acceso al gimnasio</li>
+                    <li><i class="fas fa-check"></i> Vestidores</li>
+                    <li class="tooltip" data-tooltip="Cupos limitados"><i class="fas fa-times"></i> Clases grupales</li>
+                    <li><i class="fas fa-times"></i> Entrenador personal</li>
+                </ul>
+                <button class="plan-button tooltip" data-tooltip="¡Últimos 5 cupos disponibles!">Elegir Plan</button>
+            </div>
+
+            <div class="plan-card featured" data-plan="premium">
+                <div class="plan-header">
+                    <div class="plan-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Plan Premium</h3>
+                    <div class="precio-container">
+                        <div class="precio">
+                            <span class="precio-mensual">$8000/mes</span>
+                            <span class="precio-anual">$80000/año</span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> Todo lo del plan básico</li>
+                    <li class="tooltip" data-tooltip="4 clases por semana"><i class="fas fa-check"></i> Clases grupales</li>
+                    <li class="tooltip" data-tooltip="2 sesiones al mes"><i class="fas fa-check"></i> Entrenador personal</li>
+                    <li><i class="fas fa-check"></i> Acceso a piscina</li>
+                </ul>
+                <button class="plan-button tooltip" data-tooltip="¡Mejor valor! Ahorra 20%">Elegir Plan</button>
+            </div>
+
+            <div class="plan-card" data-plan="vip">
+                <div class="plan-header">
+                    <div class="plan-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Plan VIP</h3>
+                    <div class="precio-container">
+                        <div class="precio">
+                            <span class="precio-mensual">$12000/mes</span>
+                            <span class="precio-anual">$120000/año</span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> Todo lo del plan premium</li>
+                    <li class="tooltip" data-tooltip="Clases ilimitadas"><i class="fas fa-check"></i> Clases grupales VIP</li>
+                    <li class="tooltip" data-tooltip="8 sesiones al mes"><i class="fas fa-check"></i> Entrenador personal</li>
+                    <li><i class="fas fa-check"></i> Spa y masajes</li>
+                </ul>
+                <button class="plan-button">Elegir Plan</button>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>Gymbaland - ¡Elige tu plan y cruza el puente hacia el éxito! #GymbalandÉxito</p>
-        <div class="redes-sociales">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
+        <div class="Titulo-cards"> 
+            <p>Gymbaland - ¡Sube tu nivel! #HighTechVibes</p>    
+        </div>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="redes-sociales">
+                    <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                </div>
+                <div class="contact-btn">
+                    <a href="contacto.html"><i class="fas fa-envelope"></i> Contactanos para mas informacion</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <div class="mapa">
+                    <span class="mapa-title"><i class="fas fa-map-marker-alt"></i> Nuestra Ubicación:</span>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434617582!2d-58.37723248530711!3d-34.60552898045159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccadd1d39f9eb%3A0xa8ae66542b70b473!2sPlaza%20de%20Mayo!5e0!3m2!1ses!2sar!4v1652111528727!5m2!1ses!2sar" 
+                        allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Gymbaland. Todos los derechos reservados | Desarrollado por <a href="#">Martin Alejandro Bonari</a></p>
         </div>
     </footer>
 </body>
