@@ -83,6 +83,9 @@ Crear un sitio web que ofrezca:
 - **Font Awesome** (opcional): Para iconografía en redes sociales o botones.
 
 ## 🚀 Cómo Visualizar el Proyecto
-1. Clona el repositorio:
+1. Clona el repositorio (Para Trabajar con el Codigo):
    ```bash
    git clone https://github.com/usuario/nombre-del-repositorio.git
+
+2. Utiliza este enlace (Para comprobar funcionalidades por tu cuenta):
+https://martinmab2.github.io/Gymbaland/index.html
