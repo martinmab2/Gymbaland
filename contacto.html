@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,18 +8,20 @@
     <link rel="stylesheet" href="css/estilos.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/1c3a594d0c.js" crossorigin="anonymous"></script>
+    <script src="js/darkmode.js"></script>
 </head>
 <body>
     <!-- Encabezado -->
     <header>
-        <!-- Added a class to the nav element for better targeting -->
         <nav class="main-nav">
             <div class="logo">
                 <a>GYM<i class="fas fa-dumbbell"></i>BALAND</a>       
             </div>
+            <button id="darkModeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
             <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
             <input type="checkbox" id="menu-toggle">
-            <!-- Ensure submenu is properly nested and visible -->
             <ul class="menu">
                 <li><a href="index.html">INICIO</a></li>
                 <li><a href="entrenadores.html">Entrenadores</a></li>

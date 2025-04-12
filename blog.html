@@ -1,19 +1,29 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog de Fitness | Gymbaland</title>
-    <!-- Enlace al archivo CSS -->
+    <link rel="icon" type="image/png" href="img/gymbaland.jpg" sizes="16x16">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
+    <script src="https://kit.fontawesome.com/1c3a594d0c.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Encabezado -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="clases.html">Clases</a></li>
+        <nav class="main-nav">
+            <div class="logo">
+                <a>GYM<i class="fas fa-dumbbell"></i>BALAND</a>       
+            </div>
+            <!-- Solo mantener un botón de tema -->
+            <button id="darkModeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
+            <input type="checkbox" id="menu-toggle">
+            <ul class="menu">
+                <li><a href="index.html">INICIO</a></li>
                 <li><a href="entrenadores.html">Entrenadores</a></li>
                 <li><a href="precios.html">Precios</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
@@ -27,53 +37,53 @@
         <p>¡Súmate a #GymbalandFitness!</p>
     </section>
 
+    <!-- Sistema de tags y categorías -->
+    <section id="tags-categorias">
+        <h2>Filtra por Categorías</h2>
+        <div class="filtro-blog">
+            <div class="tags-container">
+                <input type="radio" name="categoria" value="todos" id="todos" checked>
+                <label for="todos">Todos</label>
+                
+                <input type="radio" name="categoria" value="fuerza" id="fuerza">
+                <label for="fuerza">Fuerza</label>
+                
+                <input type="radio" name="categoria" value="yoga" id="yoga">
+                <label for="yoga">Yoga</label>
+                
+                <input type="radio" name="categoria" value="crossfit" id="crossfit">
+                <label for="crossfit">CrossFit</label>
+                
+                <input type="radio" name="categoria" value="nutricion" id="nutricion">
+                <label for="nutricion">Nutrición</label>
+            </div>
+        </div>
+    </section>
+
     <!-- Artículos estilo revista -->
     <section id="articulos">
-        <h2>Últimos Artículos</h2>
+        <h2 class="Titulo-cards">Últimos Artículos</h2>
         <div class="grid-newspaper">
-            <article>
+            <article data-categoria="fuerza">
                 <h3>10 Ejercicios para mejorar tu fuerza</h3>
-                <p>Descubre los mejores movimientos para construir músculo y quemar grasa.</p>
-                <a href="#">Leer más</a>
+                <p>Descubre los mejores movimientos para construir músculo y quemar grasa de manera efectiva. Una guía completa para principiantes y avanzados.</p>
+                <a href="#" class="read-more">Leer más</a>
             </article>
-            <article>
+            <article data-categoria="yoga">
                 <h3>Beneficios del yoga en tu bienestar</h3>
                 <p>Explora cómo el yoga puede ayudarte a encontrar equilibrio y paz.</p>
                 <a href="#">Leer más</a>
             </article>
-            <article>
+            <article data-categoria="crossfit">
                 <h3>Rutinas de CrossFit para principiantes</h3>
                 <p>¿Nuevo en CrossFit? Aprende las mejores rutinas para comenzar.</p>
                 <a href="#">Leer más</a>
             </article>
-            <article>
+            <article data-categoria="nutricion">
                 <h3>La clave del éxito: Alimentación saludable</h3>
                 <p>Alcanza tus objetivos combinando nutrición y entrenamiento.</p>
                 <a href="#">Leer más</a>
             </article>
-        </div>
-    </section>
-
-    <!-- Sistema de tags y categorías -->
-    <section id="tags-categorias">
-        <h2>Filtra por Categorías</h2>
-        <div class="tags">
-            <label>
-                <input type="checkbox" name="categoria" value="fuerza">
-                Fuerza
-            </label>
-            <label>
-                <input type="checkbox" name="categoria" value="yoga">
-                Yoga
-            </label>
-            <label>
-                <input type="checkbox" name="categoria" value="crossfit">
-                CrossFit
-            </label>
-            <label>
-                <input type="checkbox" name="categoria" value="nutricion">
-                Nutrición
-            </label>
         </div>
     </section>
 
@@ -98,11 +108,102 @@
 
     <!-- Footer -->
     <footer>
-        <div class="redes-sociales">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>¡Suscríbete a nuestro newsletter!</h3>
+                <form>
+                    <input type="email" placeholder="Ingresa tu email" required>
+                    <button type="submit">Suscribirse</button>
+                </form>
+                <div class="redes-sociales">
+                    <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                </div>
+            </div>
+            <div class="footer-mapa">
+                <span class="mapa-title">Encuéntranos aquí</span>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0168878894506!2d-58.38375908477038!3d-34.60373446499274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4aa9f0a6da5edb%3A0x11bead4e234e558b!2sObelisco!5e0!3m2!1ses!2sar!4v1635510558298!5m2!1ses!2sar" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2023 Gymbaland. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- Agregamos Font Awesome para los iconos -->
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Dark Mode Toggle - Mover este código al principio
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const html = document.documentElement;
+            
+            function toggleTheme() {
+                if (html.getAttribute('data-theme') === 'dark') {
+                    html.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light');
+                    darkModeToggle.querySelector('i').classList.replace('fa-sun', 'fa-moon');
+                } else {
+                    html.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                    darkModeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+                }
+            }
+
+            // Verificar tema guardado
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            html.setAttribute('data-theme', savedTheme);
+            if (savedTheme === 'dark') {
+                darkModeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+
+            // Agregar evento click
+            darkModeToggle.addEventListener('click', toggleTheme);
+
+            // Código de filtros existente...
+            const filtros = document.querySelectorAll('.filtro-blog input[type="radio"]');
+            const articulos = document.querySelectorAll('.grid-newspaper article');
+
+            filtros.forEach(filtro => {
+                filtro.addEventListener('change', function() {
+                    const categoriaSeleccionada = this.value;
+
+                    articulos.forEach(articulo => {
+                        articulo.classList.remove('visible');
+                        articulo.classList.add('hidden');
+                        
+                        setTimeout(() => {
+                            if (categoriaSeleccionada === 'todos' || 
+                                articulo.dataset.categoria === categoriaSeleccionada) {
+                                articulo.classList.remove('hidden');
+                                articulo.classList.add('visible');
+                            }
+                        }, 300);
+                    });
+                });
+            });
+        });
+
+        // Mantener el código existente del scroll reveal
+        function reveal() {
+            var articles = document.querySelectorAll('.grid-newspaper article');
+            
+            articles.forEach(article => {
+                var windowHeight = window.innerHeight;
+                var elementTop = article.getBoundingClientRect().top;
+                var elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    article.classList.add("visible");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
 </body>
 </html>
+``` 
