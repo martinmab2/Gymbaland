@@ -2,8 +2,11 @@
     /* Colores principales */
     --primary-color: #1c1c1c;
     --secondary-color: #f4a261;
+    --terciary-color: #f4a261;
     --text-color: #ffffff;
     --background-color: #e7e6ff;
+    --background-card-trainer-color:#ffffff;
+    --text-table-color:#ff6b35;
   
     /* Colores de interacción */
     --hover-color: #ef8a3c;
@@ -17,6 +20,7 @@
     /* Nuevas variables de color */
     --card-bg: #b1b2ff;
     --light-bg: #ffffff;
+    --light-bg-2: #f0f0f0;
     --dark-bg: #2a2a2a;
     --border-color: #b0c4de;
     --success-color: #4caf50;
@@ -35,8 +39,11 @@
     /* Colores principales */
     --primary-color: #ffffff; /* Invertido de #1c1c1c */
     --secondary-color: #0b5d9e; /* Invertido de #f4a261 */
+    --terciary-color: #b5c500;
     --text-color: #1c1c1c; /* Invertido de #ffffff */
     --background-color: #181900; /* Invertido de #e7e6ff */
+    --background-card-trainer-color:#1075c3;
+    --text-table-color:#1c1c1c;
   
     /* Colores de interacción */
     --hover-color: #1075c3; /* Invertido de #ef8a3c */
@@ -50,6 +57,7 @@
     /* Nuevas variables de color para modo oscuro */
     --card-bg: #2a2a2a;
     --light-bg: #b5c500;
+    --light-bg-2: #1a1a1a;
     --dark-bg: #1a1a1a;
     --border-color: #444;
     --text-muted: #ffffff;
@@ -476,7 +484,7 @@
   }
   
   .hero h1 {
-    color: var(--error-color);
+    color: var(--light-bg);
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 40px;
@@ -712,9 +720,10 @@
     display: block;
   }
   
-  /* Ocultar todas las clases por defecto */
   .grid-masonry .clase {
     display: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    animation: fadeIn 0.5s ease forwards;
   }
   
   /* Estilos para las etiquetas de filtro */
@@ -738,15 +747,6 @@
     background: var(--error-color);
     color: var(--light-bg);
     border-color: var(--error-color);
-  }
-  
-  /* Animación para las cards filtradas */
-  .grid-masonry .clase {
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-  
-  .grid-masonry .clase:not([style*="display: none"]) {
-    animation: fadeIn 0.5s ease forwards;
   }
   
   @keyframes fadeIn {
@@ -828,7 +828,7 @@
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 15px;
     overflow: hidden;
-    background: var(--light-bg);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-bg) 100%);
     box-shadow: 0 5px 15px var(--medium-shadow);
     box-sizing: border-box; /* Añadido para incluir padding en el cálculo del tamaño */
   }
@@ -848,13 +848,13 @@
   
   .trainer-front h3 {
     margin: 1rem;
-    color: var(--primary-color);
+    color: var(--terciary-color);
     font-size: 1.5rem;
     text-align: center;
   }
   
   .trainer-front p {
-    color: var(--footer-text);
+    color: var(--terciary-color);
     font-size: 1rem;
     text-align: center;
     margin-bottom: 1rem;
@@ -976,7 +976,7 @@
   .tarjeta:hover {
     transform: scale(1.05); /* Efecto de zoom */
     background-color: var(--footer-text);
-    color: var(--light-bg);
+    color: var(--light-bg-2);
   }
   
   .tarjeta h3 {
@@ -1048,7 +1048,7 @@
     left: 50%;
     width: 0;
     height: 2px;
-    background-color: var(--light-bg);
+    background-color: var(--light-bg-2);
     transform: translate(-50%, -50%);
     transition: width 0.4s ease;
   }
@@ -1129,6 +1129,7 @@
     font-weight: 700;
     position: relative;
     padding-bottom: 15px;
+    color: var(--primary-color);
   }
   
   .Titulo-cards3::after {
@@ -1207,7 +1208,7 @@
   
   .clase-info {
     position: relative;
-    background: var(--light-bg);
+    background: var(--background-card-trainer-color);
     padding: 1.5rem;
     transform: translateY(0);
     transition: transform 0.3s ease;
@@ -1252,7 +1253,7 @@
   
   .clase-btn {
     display: inline-block;
-    background-color: var(--secondary-color);
+    background-color: var(--terciary-color);
     color: var(--text-color);
     padding: 10px 20px;
     border-radius: 5px;
@@ -1287,7 +1288,7 @@
   }
   
   .clase-trainer {
-    color: var(--footer-hover);
+    color: var(--terciary-color);
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: 15px;
@@ -1315,7 +1316,7 @@
   .horarios table {
     width: 100%;
     border-collapse: collapse;
-    background: var(--light-bg);
+    background: var(--background-card-trainer-color);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 0 20px var(--light-shadow);
@@ -1351,7 +1352,7 @@
   }
   
   .horarios .trainer-name {
-    color: var(--footer-hover);
+    color: var(--text-table-color);
     font-weight: 600;
     font-size: 0.9rem;
   }
@@ -1371,7 +1372,7 @@
   
   .nutrition-tip i {
     font-size: 1.5rem;
-    color: var(--secondary-color);
+    color: var(--text-table-color);
     margin-bottom: 10px;
   }
   
@@ -1390,7 +1391,7 @@
   
   .meal-icons i {
     font-size: 1.2rem;
-    color: var(--footer-hover);
+    color: var(--text-table-color);
     transition: transform 0.3s ease;
   }
   
@@ -1409,7 +1410,7 @@
   
   .rest-day-content i {
     font-size: 2rem;
-    color: var(--footer-hover);
+    color: var(--text-table-color);
     margin-bottom: 10px;
   }
   
